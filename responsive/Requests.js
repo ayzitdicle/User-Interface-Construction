@@ -27,6 +27,9 @@ function accept_offer(){
 
 	var parent = document.getElementById("div1");
 
+	var hele = document.getElementById("hele");
+
+
 	var acc_but = document.getElementById("accept_but1");
 	var dec_but = document.getElementById("decline_but1");
 
@@ -36,11 +39,14 @@ function accept_offer(){
 
 		req_tag.innerHTML="";
 
-		parent.removeChild(acc_but);
-		parent.removeChild(dec_but);
+		parent.removeChild(hele);
+		acc_but.innerHTML ="Confirm";
+		dec_but.innerHTML ="Complain";
+		//parent.removeChild(acc_but);
+		//parent.removeChild(dec_but);
 
 
-		ch1.disabled = true;
+		//ch1.disabled = true;
 		ch1.checked = false;
 
 	}
@@ -69,7 +75,6 @@ function accept_service(){
 	var off = document.getElementById("last_off");
 
 	var ab = document.getElementById("ab");
-	var db = document.getElementById("db");
 	var cb = document.getElementById("cb");
 
 	var parent = document.getElementById("div2");
@@ -79,11 +84,10 @@ function accept_service(){
 
 		var x = document.createElement("SPAN");
 		x.setAttribute("class","tag tag-info");
-		x.innerHTML ="Service Accepted";
+		x.innerHTML ="Service Confirmed";
 		req.appendChild(x);
 
 		parent.removeChild(ab);
-		parent.removeChild(db);
 		parent.removeChild(cb);
 
 		last_off.disabled = true;
@@ -93,36 +97,7 @@ function accept_service(){
 	}
 }
 
-function decline_service(){
 
-	var req = document.getElementById("last_req");
-
-	var off = document.getElementById("last_off");
-
-	var ab = document.getElementById("ab");
-	var db = document.getElementById("db");
-	var cb = document.getElementById("cb");
-
-	var parent = document.getElementById("div2");
-
-	if(last_off.checked == true){
-
-		var x = document.createElement("SPAN");
-		x.setAttribute("class","tag tag-warning");
-		x.innerHTML ="Service Declined";
-		req.appendChild(x);
-
-
-		parent.removeChild(ab);
-		parent.removeChild(db);
-		parent.removeChild(cb);
-
-		last_off.disabled = true;
-		last_off.checked = false;
-
-
-	}
-}
 
 function complain(){
 
@@ -131,7 +106,6 @@ function complain(){
 	var off = document.getElementById("last_off");
 
 	var ab = document.getElementById("ab");
-	var db = document.getElementById("db");
 	var cb = document.getElementById("cb");
 
 	var parent = document.getElementById("div2");
@@ -144,7 +118,7 @@ function complain(){
 		req.appendChild(x);
 
 		parent.removeChild(ab);
-		parent.removeChild(db);
+	
 		parent.removeChild(cb);
 
 		last_off.disabled = true;
